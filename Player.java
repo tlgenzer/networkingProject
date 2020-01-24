@@ -7,7 +7,7 @@
  */
 
 
-public enum TicTacToePiece 
+public enum Player 
 {
-	X, O
+	A, B
 }

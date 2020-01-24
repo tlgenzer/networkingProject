@@ -1,21 +1,21 @@
 public class TicTacToe implements ITicTacToe
 {
     //INSTANCE VARIABLES
-    TicTacToePiece[][]board = new TicTacToePiece[3][3];
+    Player[][]board = new Player[3][3];
     
-    TicTacToePiece current;
+    Player current;
     //CONSTRUCTORS
     public TicTacToe() 
     {
         
-        current = TicTacToePiece.X;
+        current = Player.A;
     }
     
     //METHODS
     /*
      *  Return the current player's piece (X or O)
      */
-    public TicTacToePiece getCurrentPlayer()
+    public Player getCurrentPlayer()
     {
         return current;
     }
@@ -25,13 +25,13 @@ public class TicTacToe implements ITicTacToe
      */
     public void nextPlayer()
     {
-        if(current == TicTacToePiece.X)
+        if(current == Player.A)
         {
-            current = TicTacToePiece.O;
+            current = Player.B;
            }
            else
         {
-            current = TicTacToePiece.X;
+            current = Player.A;
            }
     }
     
@@ -52,7 +52,7 @@ public class TicTacToe implements ITicTacToe
      *  Return the piece that is located at the specified row, col
      *  If there is no piece at that location, return null
      */
-    public TicTacToePiece getPiece(int row, int col)
+    public Player getPiece(int row, int col)
     {
         return board[row][col];
     }
@@ -80,7 +80,7 @@ public class TicTacToe implements ITicTacToe
      *  Return the appropriate TicTacToePiece (X or Y) if there is a winner.
      *  Hint: use the helper methods: checkRowsForWinner(), checkColsForWinner(), and checkDiagsForWinner()
      */
-    public TicTacToePiece getWinner()
+    public Player getWinner()
     {
         if(checkRowsForWinner()!=null)
         {
@@ -123,7 +123,7 @@ public class TicTacToe implements ITicTacToe
      *  If a, b, and c are all the same TicTacToe piece, then return that piece
      *  Otherwise, return null
      */
-    private TicTacToePiece checkForWinner(TicTacToePiece a, TicTacToePiece b, TicTacToePiece c)
+    private Player checkForWinner(Player a, Player b, Player c)
     {
         if(a==b && b==c)
         {
@@ -138,9 +138,9 @@ public class TicTacToe implements ITicTacToe
      *  Return the first non-null winner that is found (starting from row 0)
      *  If no non-null winners are found, return null
      */
-    private TicTacToePiece checkRowsForWinner()
+    private Player checkRowsForWinner()
     {
-        TicTacToePiece ret= null;
+        Player ret= null;
         for(int i=2;i>=0; i--)
         {
             if(checkForWinner(board[i][0], board[i][1], board[i][2])==null)
@@ -160,9 +160,9 @@ public class TicTacToe implements ITicTacToe
      *  Return the first non-null winner that is found (starting from column 0)
      *  If no non-null winners are found, return null
      */
-    private TicTacToePiece checkColsForWinner()
+    private Player checkColsForWinner()
     {
-        TicTacToePiece ret= null;
+        Player ret= null;
         for(int i=2;i>=0; i--)
         {
             if(checkForWinner(board[0][i], board[1][i], board[2][i])==null)
@@ -184,9 +184,9 @@ public class TicTacToe implements ITicTacToe
      *  Return the first non-null winner that is found
      *  If no non-null winners are found, return null
      */
-    private TicTacToePiece checkDiagsForWinner()
+    private Player checkDiagsForWinner()
     {
-        TicTacToePiece ret= null;
+        Player ret= null;
         if(checkForWinner(board[0][0], board[1][1], board[2][2])==null)
              {
                 ret=null;

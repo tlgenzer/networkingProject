@@ -44,13 +44,13 @@ public class PieceActor extends Actor
     /*
      *  Use the setPicture method to change this PieceActor's image to X or O as specified by the parameter
      */
-    public void setPiece(TicTacToePiece piece)
+    public void setPiece(Player piece)
     {
-        if(piece==TicTacToePiece.X)
+        if(piece==Player.A)
         {
             setPicture("img/x.png");
         }
-        if(piece==TicTacToePiece.O)
+        if(piece==Player.B)
         {
             setPicture("img/o.png");
         }

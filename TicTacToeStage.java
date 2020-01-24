@@ -19,25 +19,25 @@ public class TicTacToeStage extends Stage
     //INSTANCE VARIABLES
     private TicTacToe game;
     private Text currentPlayer, winner;
-    private TicTacToePiece p;
+    private Player p;
     private PieceActor[][]board = new PieceActor[3][3];
-    private TicTacToePiece youAre;
+    private Player youAre;
     //CONSTRUCTOR
-    public TicTacToeStage(TicTacToeClient client, TicTacToe g, TicTacToePiece piece)
+    public TicTacToeStage(TicTacToeClient client, TicTacToe g, Player piece)
     {
         //TODO: store parameters in instance variables
         
         setBackground("img/background.png");
         youAre = piece;
         game = g;
-        if(piece==TicTacToePiece.X)
+        if(piece==Player.A)
         {
             System.out.println("x");
            Text youarex = new Text("You are X", Color.WHITE);
               addActor(youarex, 500, 0);
               
            }
-        if(piece==TicTacToePiece.O)
+        if(piece==Player.B)
     	{
     	    
     	    System.out.println("o");
@@ -86,18 +86,18 @@ public class TicTacToeStage extends Stage
         {
             currentPlayer.setText("Game Over!");
             
-            TicTacToePiece win = game.getWinner();
-            if(win == TicTacToePiece.X)
+            Player win = game.getWinner();
+            if(win == Player.A)
                 winner.setText("X wins!");
-            else if(win == TicTacToePiece.O)
+            else if(win == Player.B)
                 winner.setText("O Wins!");
             else
                 winner.setText("Tie Game!");
         }
         else
         {
-            TicTacToePiece curr = game.getCurrentPlayer();
-            if(curr == TicTacToePiece.X)
+            Player curr = game.getCurrentPlayer();
+            if(curr == Player.A)
                 currentPlayer.setText("It is X's turn");
             else
                 currentPlayer.setText("It is O's turn");
@@ -107,7 +107,7 @@ public class TicTacToeStage extends Stage
     /*
      *  Update the PieceActor located at (row, col) to display the specified TicTacToePiece
      */
-    public void updatePiece(TicTacToePiece piece, int row, int col)
+    public void updatePiece(Player piece, int row, int col)
     {
         
         board[row][col].setPiece(piece);

@@ -7,6 +7,6 @@ comment2.params=
 comment2.target=void\ update()
 comment2.text=\r\n\ \ Checks\ if\ this\ piece\ is\ clicked\ using\ the\ isClicked()\ method\r\n\ \ If\ it\ is\ clicked\ then\:\r\n\ \ \ \ \ \ 1.\ Send\ a\ request\ to\ the\ server\ to\ "play\ [row]\ [col]"\r\n
 comment3.params=piece
-comment3.target=void\ setPiece(TicTacToePiece)
+comment3.target=void\ setPiece(Player)
 comment3.text=\r\n\ \ Use\ the\ setPicture\ method\ to\ change\ this\ PieceActor's\ image\ to\ X\ or\ O\ as\ specified\ by\ the\ parameter\r\n
 numComments=4

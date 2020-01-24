@@ -3,7 +3,7 @@ public interface ITicTacToe
     /*
      *	Return the current player's piece (X or O)
      */
-    public TicTacToePiece getCurrentPlayer();
+    public Player getCurrentPlayer();
     
     /*
      *	Change the current player from X to O, or from O to X
@@ -20,7 +20,7 @@ public interface ITicTacToe
      *	Return the piece that is located at the specified row, col
      *	If there is no piece at that location, return null
      */
-    public TicTacToePiece getPiece(int row, int col);
+    public Player getPiece(int row, int col);
     
     /*
      *	Return true if there is at least 1 empty space left on the board
@@ -31,7 +31,7 @@ public interface ITicTacToe
     /*	Return null if there is no winner
      *	Return the appropriate TicTacToePiece (X or Y) if there is a winner.
      */
-    public TicTacToePiece getWinner();
+    public Player getWinner();
     
     /*
      *	Return true if there is a winner or if there are no empty spaces left on the board

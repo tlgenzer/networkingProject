@@ -6,7 +6,7 @@ public class TicTacToeClient extends Client
 {
     private TicTacToeStage stage;
     private TicTacToe game;
-    private TicTacToePiece piece = null;
+    private Player piece = null;
     public TicTacToeClient() 
     {
         Scanner in = new Scanner(System.in);
@@ -53,17 +53,16 @@ public class TicTacToeClient extends Client
               //4. create a new Mayflower object with the stage you just created. This will open the GUI and start the game
             if(parts[1].equals("X"))
             {
-              piece = TicTacToePiece.X;
+              piece = Player.A;
              
-              }
+            }
             if(parts[1].equals("O"))
             {
-              piece = TicTacToePiece.O;
-              
-              }
+              piece = Player.B;
+            }
             game = new TicTacToe();
             stage = new TicTacToeStage(this, game, piece);
-            new Mayflower("TicTacToe",800, 600, stage);
+            new Mayflower("Rock Scissors Paper",800, 600, stage);
         }
         else if("addpiece".equals(parts[0]))
         {
